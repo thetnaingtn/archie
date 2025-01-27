@@ -48,10 +48,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
-    background-color: var(--hovercolor);
-    color: #fff;
-}
 
 ul {
   list-style: none;
@@ -200,7 +196,6 @@ h6::before { color: var(--maincolor); content: '###### '; }
 footer {
   display: flex;
   align-items: center;
-  border-top: 0.4rem dotted var(--bordercl);
   padding: 2rem 0rem;
   margin-top: 2rem;
 }
