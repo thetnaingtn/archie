@@ -144,6 +144,16 @@ header {
 header .main {
   font-size: 1.5rem;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav span{
+  line-height: 1;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: 1.2rem;
   margin-top: 2em;
@@ -393,4 +403,64 @@ table td{
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+.switch-wrapper{
+  position: relative;
+  height: 28px;
+  background-color:rgb(229 231 235);
+  display: inline-block;
+  width: 64px;
+  border-radius: 1rem;
+  cursor:pointer;
+}
+
+.switch-wrapper input{
+  display: none;
+}
+
+.switch-wrapper::before{
+  content: "🇲🇲"; /* Myanmar flag emoji */
+  line-height: 1;
+  position: absolute;
+  left:7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch-wrapper::after{
+  content: "🇺🇸";
+  line-height: 1;
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch-slider{
+  position: absolute;
+  display: block;
+  inset:0;
+  z-index: 1;
+}
+
+.switch-slider::before{
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 32px;
+  height: 32px;
+  transform-box: content-box;
+  box-shadow: 1.5px 1px 3.5px 0.5px rgba(136, 136, 136, 0.514);
+  border-radius: 100%;
+  transition: transform 0.5s;
+  background-color: #fff;
+}
+
+.switch-toggle:checked + .switch-slider:before{
+  transform: translateX(100%);
+}
+
+.switch-toggle:checked + .switch-slider{
+  border-radius: 1rem;
 }

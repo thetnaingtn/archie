@@ -16,6 +16,7 @@
 		{{ range .Site.Menus.main }}
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
+		{{ partial "language-switcher.html" . }}
 		{{ if eq .Site.Params.mode "toggle" -}}
 	| <span id="dark-mode-toggle" onclick="toggleTheme()">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</span>
 		<script src="{{ absURL "js/themetoggle.js" }}"></script>

@@ -1,0 +1,14 @@
+<label for="switch" class="switch-wrapper">
+    <input id="switch" {{if eq .Site.Language.Lang "my" }} checked {{ end }} id="switch" role="switch" type="checkbox" class="switch-toggle" />
+    <span class="switch-slider"></span>
+</label>
+
+<script>
+    document.getElementById('switch').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = "{{ if .IsHome }}{{ .Site.BaseURL }}my{{ else }}{{ .Site.BaseURL }}my/{{ .Path }}{{ end }}";
+        } else {
+            window.location.href = "{{ if .IsHome}}{{ .Site.BaseURL }}{{ else }}{{ .Site.BaseURL }}{{ .Path }}{{ end }}";
+        }
+    });
+</script>
