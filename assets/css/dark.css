@@ -76,10 +76,6 @@ a {
   border-bottom: 3px solid var(--darkMaincolor);
   color: inherit;
 }
-a:hover {
-  background-color: var(--darkMaincolor);
-  color: black;
-}
 
 .site-description a {
   color: #ddd;
