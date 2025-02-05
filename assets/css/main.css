@@ -466,3 +466,8 @@ table td{
 .switch-toggle:checked + .switch-slider{
   border-radius: 1rem;
 }
+
+.utterances{
+  margin-left: 0;
+  margin-right: 0;
+}
