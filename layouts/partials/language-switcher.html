@@ -9,5 +9,14 @@
         } else {
             window.location.href = "{{ if .IsHome }}{{ .Site.BaseURL }}my{{ else }}{{ .Site.BaseURL }}my/{{ .Path }}{{ end }}";
         }
+        let isHome = "{{ .IsHome}}";
+        let baseUrl = "{{ .Site.BaseURL }}";
+        let path = "{{ .Path }}";
+        let lang = "{{ .Site.Language.Lang }}";
+        console.log("lang: ", lang);
+        console.log("isHome: ", isHome);
+        console.log("baseUrl: ", baseUrl);
+        console.log("path: ", path);
+        console.log("url: ", `${baseUrl}${path}`);
     });
 </script>
