@@ -13,6 +13,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Google Analytics Script
 - Callouts
 - Tags
+- Search
 - Auto Dark Mode(based on system theme)
 - Dark/Light Mode toggle
 - tl:dr; frontamatter
@@ -105,6 +106,35 @@ This include the ability to set your own callout emoji, title, and css style ele
 {{< callout type="warning" text="This is a warning callout." >}}
 ```
 
+### Search
+
+Archie ships with an opt-in search page backed by a Hugo-generated JSON index.
+
+1. Create a search page:
+
+```yaml
+---
+title: "Search"
+layout: "search"
+outputs:
+  - html
+  - json
+---
+```
+
+2. Add the page to your main menu if you want it linked in the header:
+
+```toml
+[[menu.main]]
+name = "Search"
+url = "/search/"
+weight = 5
+```
+
+The generated search page indexes the same content surface as the home page when
+`params.mainSections` is set. Otherwise it falls back to all regular pages,
+excluding hidden content and the search page itself.
+
 ## Config of the Demo Site
 
 ```toml
@@ -120,7 +150,8 @@ pygmentscodefencesguesssyntax = true
 
 disqusShortname = "yourDisqusShortname"
 
-paginate=3 # articles per page
+[pagination]
+  pagerSize = 3 # articles per page
 
 [params]
 	mode="auto" # color-mode → light,dark,toggle or auto
